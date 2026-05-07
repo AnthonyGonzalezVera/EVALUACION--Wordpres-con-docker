@@ -76,7 +76,7 @@ Se creó una red Docker personalizada para aislar y conectar todos los contenedo
 docker network create redAnthonySuda
 ```
 
-![Figura 1-1. Creación de la red Docker](imagenes1/1.png)
+![Figura 1-1. Creación de la red Docker](imagenes1/1.jpeg)
 
 ---
 
@@ -88,7 +88,7 @@ Se creó un volumen persistente donde se almacenarán los archivos de WordPress.
 docker volume create wordpress-Volumenes
 ```
 
-![Figura 1-2. Creación del volumen para WordPress](imagenes1/2.png)
+![Figura 1-2. Creación del volumen para WordPress](imagenes1/2.jpeg)
 
 ---
 
@@ -100,7 +100,7 @@ Se creó un volumen persistente donde se almacenarán los datos de la base de da
 docker volume create mysql-Volumenes
 ```
 
-![Figura 1-3. Creación del volumen para MySQL](imagenes1/3.png)
+![Figura 1-3. Creación del volumen para MySQL](imagenes1/3.jpeg)
 
 ---
 
@@ -121,7 +121,7 @@ docker run -d --name mysql-container --network redAnthonySuda -v mysql-Volumenes
 | MYSQL_USER | wpuser |
 | MYSQL_PASSWORD | wppass |
 
-![Figura 1-4. Creación del contenedor MySQL](imagenes1/4.png)
+![Figura 1-4. Creación del contenedor MySQL](imagenes1/4.jpeg)
 
 ---
 
@@ -136,7 +136,7 @@ docker run -d --name phpmyadmin-container --network redAnthonySuda -e PMA_HOST=m
 - Puerto expuesto: **8080 → 80**
 - Acceso: `http://localhost:8080`
 
-![Figura 1-5. Creación del contenedor phpMyAdmin](imagenes1/5.png)
+![Figura 1-5. Creación del contenedor phpMyAdmin](imagenes1/5.jpeg)
 
 ---
 
@@ -151,7 +151,7 @@ docker run -d --name wordpress-container --network redAnthonySuda -v wordpress-V
 - Puerto expuesto: **8081 → 80**
 - Acceso: `http://localhost:8081`
 
-![Figura 1-6. Creación del contenedor WordPress](imagenes1/6.png)
+![Figura 1-6. Creación del contenedor WordPress](imagenes1/6.jpeg)
 
 ---
 
@@ -169,7 +169,7 @@ docker ps
 | d62db7164df4 | phpmyadmin/phpmyadmin | 0.0.0.0:8080->80/tcp | phpmyadmin-container |
 | dacca3cd3909 | mysql:5.7 | 3306/tcp, 33060/tcp | mysql-container |
 
-![Figura 1-7. Verificación con docker ps](imagenes1/7.png)
+![Figura 1-7. Verificación con docker ps](imagenes1/7.jpeg)
 
 ---
 
